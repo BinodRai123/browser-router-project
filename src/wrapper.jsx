@@ -5,7 +5,7 @@ const context = createContext()
 const Wrapper = (props) => {
     
   return <>
-    <context.Provider>
+    <context.Provider value={null}>
       {props.children}
     </context.Provider>
   </>
