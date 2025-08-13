@@ -3,7 +3,7 @@ import Navbar from "../Navbar/navbar"
 
 const App = () => {
   return (
-    <div> 
+    <div className="bg-gray-900 h-[100vh] text-white px-20"> 
       <Navbar />
       <Mainroutes />
     </div>

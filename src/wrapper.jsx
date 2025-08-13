@@ -1,11 +1,12 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 
-const context = createContext()
+export const context = createContext(null);
 
 const Wrapper = (props) => {
+  const [formData, setFormData] = useState([])
     
   return <>
-    <context.Provider value={null}>
+    <context.Provider value={[formData, setFormData]}>
       {props.children}
     </context.Provider>
   </>
