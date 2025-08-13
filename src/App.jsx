@@ -1,6 +1,10 @@
+import Mainroutes from "../all_routes/mainroutes"
+
 const App = () => {
   return (
-    <div> App</div>
+    <div> 
+      <Mainroutes />
+    </div>
   )
 }
 
