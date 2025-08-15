@@ -1,19 +1,28 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: "https://fakestoreapi.com/",
 });
 
-instance.interceptors.request.use(function (config) {
+// Add a request interceptor
+instance.interceptors.request.use(
+  function (config) {
+    // console.log("request -->",config)
     return config;
-  }, function (error) {
+  },
+  function (error) {
     return Promise.reject(error);
-  });
+  }
+);
 
-instance.interceptors.response.use(function (response) {
+instance.interceptors.response.use(
+  function (response) {
+    // console.log("response -->",response)
     return response;
-  }, function (error) {
+  },
+  function (error) {
     return Promise.reject(error);
-  });
+  }
+);
 
 export default instance;

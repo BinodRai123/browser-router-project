@@ -1,6 +1,11 @@
+import { useState } from "react";
+import Category from "../components/cateogry"
+
 const Contact = () => {
+  const [category, setCategory] = useState("");
+
   return (
-    <div>Contact</div>
+    <Category onSelect={setCategory}/>
   )
 }
 
