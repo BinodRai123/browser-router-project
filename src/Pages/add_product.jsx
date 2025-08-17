@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { context } from "../wrapper";
 
@@ -16,7 +16,6 @@ const Form = () => {
     data.id = nanoid();
     setFormData([...formData, data]);
     reset();
-    console.log(formData);
   };
 
   return (
@@ -38,6 +37,7 @@ const Form = () => {
         />
 
         <select
+          {...register("category")}
           onChange={(e) => console.log(e.target.value)}
           className="w-1/2 text-2xl font-medium p-1 bg-white text-black"
           name="category"
