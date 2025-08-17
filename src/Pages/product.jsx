@@ -9,16 +9,17 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-col gap-5">
-          {formData.map((data) => (
-            <Singleproduct
-              title={data.product_name}
-              rating={data.rating}
-              price={data.price}
-              cateogry={data.category}
-              desc={data.description}
-              image={data.image}
-            />
-          ))}
+        {formData.map((data) => (
+          <Singleproduct
+            key={data.id}
+            title={data.product_name}
+            rating={data.rating}
+            price={data.price}
+            cateogry={data.category}
+            desc={data.description}
+            image={data.image}
+          />
+        ))}
       </div>
     </>
   );

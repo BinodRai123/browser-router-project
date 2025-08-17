@@ -1,7 +1,17 @@
-const Singleproduct = ({title, rating, price, cateogry, desc, image}) => {
+import { useNavigate } from "react-router-dom";
+
+const Singleproduct = ({ title, rating, price, cateogry, desc, image }) => {
+  const navigate = useNavigate();
+  const handleProductDetailPage = () => {
+    navigate("product-detail")
+  }
+
   return (
     <>
-      <div className="rounded shadow-xl/20 flex bg-gray-800 gap-10">
+      <div
+        onClick={handleProductDetailPage}
+        className="rounded shadow-xl/20 flex bg-gray-800 gap-10 hover:scale-[1.01] ease-in cursor-pointer"
+      >
         <div className="image-container min-w-44">
           <img
             className="object-fit aspect-square p-5"
@@ -14,7 +24,8 @@ const Singleproduct = ({title, rating, price, cateogry, desc, image}) => {
             {title}
           </h1>
           <div className=" text-2xl font-medium">
-            Rating: <span className="rating text-[1.2rem] opacity-75">{rating}</span>
+            Rating:{" "}
+            <span className="rating text-[1.2rem] opacity-75">{rating}</span>
           </div>
           <h3 className="price"> price: ${price} </h3>
           <div className="cateogry">
