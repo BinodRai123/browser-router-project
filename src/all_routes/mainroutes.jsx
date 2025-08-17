@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/home";
 import About from "../Pages/about";
 import Contact from "../Pages/contact";
-import Form from "../Pages/submit_product";
+import Form from "../Pages/add_product";
 
 const Mainroutes = () => {
   return (
