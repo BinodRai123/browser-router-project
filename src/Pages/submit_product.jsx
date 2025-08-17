@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { context } from "../src/wrapper";
+import { context } from "../wrapper";
 
 const Form = () => {
   const [formData , setFormData] = useContext(context);

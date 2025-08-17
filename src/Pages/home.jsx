@@ -8,7 +8,7 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
       const { data } = await axios.get("products");
-      setProducts(data); // now we set the resolved data
+      setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -23,7 +23,7 @@ const Home = () => {
         {products.map((e) => (
           <Singleproduct
             key={e.id}
-            cateogry={e.category}
+            cateogry={e.category} 
             image={e.image}
             price={e.price}
             rating={e.rating.rate}

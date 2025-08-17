@@ -1,5 +1,5 @@
-import Mainroutes from "../all_routes/mainroutes"
-import Navbar from "../Navbar/navbar"
+import Mainroutes from "./all_routes/mainroutes"
+import Navbar from "./Navbar/navbar"
 
 const App = () => {
   return (
