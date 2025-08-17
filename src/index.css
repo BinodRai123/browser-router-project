@@ -1,7 +1,14 @@
 @import "tailwindcss";
+@theme{
+    --w-input: 50%;
+}
 
-.input-field{
+.add-product-field{
     @apply w-1/2 outline-none border-b px-2 py-4;
+}
+
+.product-detail-form {
+    @apply w-[80%] outline-none border-b px-2 py-4;
 }
 
 .button {

@@ -4,14 +4,15 @@ import { context } from "../wrapper";
 
 const Products = () => {
   const [formData, setFormData] = useContext(context);
+  console.log(formData.length)
 
   return (
     <>
       <div className="flex flex-col gap-5">
-        {formData.map((data) => (
+        {formData.length > 0 ? formData.map((data , i) => (
           <Singleproduct
-            key={data.id}
-            id={data.id}
+            key={i}
+            id={i}
             title={data.product_name}
             rating={data.rating}
             price={data.price}
@@ -19,7 +20,7 @@ const Products = () => {
             desc={data.description}
             image={data.image}
           />
-        ))}
+        )) : "Nothing...."}
       </div>
     </>
   );

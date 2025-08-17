@@ -23,14 +23,14 @@ const Form = () => {
       <form className="flex flex-col gap-8 mt-16 items-center" onSubmit={handleSubmit(handleFormData)}>
         <input
           {...register("product_name")}
-          className="text-xl font-thin input-field"
+          className="text-xl font-thin add-product-field"
           type="text"
           placeholder="Enter Product Name"
           required
         />
         <input
           {...register("price")}
-          className="text-xl font-thin input-field"
+          className="text-xl font-thin add-product-field"
           type="number"
           placeholder="Price: xxxx"
           required
@@ -51,7 +51,7 @@ const Form = () => {
 
         <textarea
           {...register("description")}
-          className="bg-white text-black min-h-28 input-field border-none"
+          className="bg-white text-black min-h-28 add-product-field border-none"
           name="description"
         ></textarea>
 
