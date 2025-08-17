@@ -4,7 +4,6 @@ import { context } from "../wrapper";
 
 const Products = () => {
   const [formData, setFormData] = useContext(context);
-  console.log(formData);
 
   return (
     <>
@@ -12,6 +11,7 @@ const Products = () => {
         {formData.map((data) => (
           <Singleproduct
             key={data.id}
+            id={data.id}
             title={data.product_name}
             rating={data.rating}
             price={data.price}

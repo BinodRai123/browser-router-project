@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-const Singleproduct = ({ title, rating, price, cateogry, desc, image }) => {
+const Singleproduct = ({ id, title, rating, price, cateogry, desc, image }) => {
   const navigate = useNavigate();
-  const handleProductDetailPage = () => {
-    navigate("product-detail")
+  const moveProductDetailPage = () => {
+    navigate(`product-detail/${id}`)
   }
 
   return (
     <>
       <div
-        onClick={handleProductDetailPage}
+        onClick={moveProductDetailPage}
         className="rounded shadow-xl/20 flex bg-gray-800 gap-10 hover:scale-[1.01] ease-in cursor-pointer"
       >
         <div className="image-container min-w-44">
