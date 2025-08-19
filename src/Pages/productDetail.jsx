@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const product = formData[index];
   const [files, setFiles] = useState({
     message: "No Files currently selected for upload",
-    preview: product.image.preview,
+    preview: product?.image?.preview,
   });
 
   const { register, handleSubmit } = useForm({

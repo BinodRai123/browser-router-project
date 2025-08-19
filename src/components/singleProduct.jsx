@@ -12,9 +12,9 @@ const Singleproduct = ({ id, title, rating, price, cateogry, desc, image }) => {
         onClick={moveProductDetailPage}
         className="rounded shadow-xl/20 flex flex-col md:flex-row bg-gray-800 gap-10 hover:scale-[1.01] ease-in cursor-pointer"
       >
-        <div className="md:w-1/2">
+        <div className="flex justify-center items-center md:w-1/2">
           <img
-            className="object-center object-cover min-h-52 md:h-full md:w-auto p-4"
+            className="object-center object-cover min-h-52 md:h-[70%] md:w-auto p-4"
             src={`${image?.preview}`}
             alt="bag-photo"
           />
