@@ -6,7 +6,7 @@ const navLinkChangeEffect = (e) => {
 const Navbar = () => {
   return (
     <>
-      <nav  className="flex justify-center items-center gap-20 py-5 text-2xl font-thin">
+      <nav  className="sticky z-10 top-0 bg-gray-900 flex justify-center items-center gap-20 py-5 text-white text-2xl font-thin">
         <NavLink className={navLinkChangeEffect} to="/">Home</NavLink>
         <NavLink className={navLinkChangeEffect} to="/products">Products</NavLink>
         <NavLink className={navLinkChangeEffect} to="/about">About</NavLink>

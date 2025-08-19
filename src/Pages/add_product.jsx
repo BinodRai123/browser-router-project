@@ -88,12 +88,13 @@ const Form = () => {
           onChange={(e) => console.log(e.target.value)}
           className="w-1/2 text-2xl font-medium p-1 bg-white text-black"
           name="category"
-          defaultValue={"Food"}
+          defaultValue={"Electronic"}
         >
-          <option value="Men">Men</option>
-          <option value="Women">Women</option>
           <option value="Electronic">Electornic</option>
           <option value="Food">Food</option>
+          <option value="Toys">Toys</option>
+          <option value="Vehicles">Vehicles</option>
+          <option value="Others">Others</option>
         </select>
 
         <textarea

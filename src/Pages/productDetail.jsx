@@ -20,7 +20,7 @@ const ProductDetail = () => {
       price: product?.price,
       category: product?.category,
       description: product?.description,
-      image: product?.preview
+      image: product?.preview,
     },
   });
 
@@ -31,9 +31,10 @@ const ProductDetail = () => {
     setFormData((prev) => {
       data.image = files;
       const updated = [...prev];
-      updated[index] = {...updated[index], ...data };
+      updated[index] = { ...updated[index], ...data };
       return updated;
     });
+    navigate("/products");
   };
 
   {
@@ -83,7 +84,7 @@ const ProductDetail = () => {
                 accept="image/*"
                 onChange={handleUploadImage}
               />
-              
+
               {/*Uploaded Images or Error will be shown } */}
               <div className=" w-full">
                 {files.preview ? (
@@ -119,12 +120,13 @@ const ProductDetail = () => {
               {...register("category")}
               className="w-[80%] text-2xl font-medium p-1 bg-white text-black"
               name="category"
-              defaultValue={product?.category || "Men"}
+              defaultValue={product?.category || "Electronic"}
             >
-              <option value="Men">Men</option>
-              <option value="Women">Women</option>
               <option value="Electronic">Electornic</option>
               <option value="Food">Food</option>
+              <option value="Toys">Toys</option>
+              <option value="Vehicles">Vehicles</option>
+              <option value="Others">Others</option>
             </select>
 
             {/*Change Product description*/}
