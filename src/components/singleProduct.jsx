@@ -35,7 +35,7 @@ const Singleproduct = ({ id, title, rating, price, cateogry, desc, image }) => {
             {cateogry}
           </div>
           <div className="description border-t py-2 max-w-[45ch] text-[1.1rem] ">
-            {desc}
+            <small className="text-xl font-bold text-green-500">Description:</small> {desc}
           </div>
         </div>
       </div>

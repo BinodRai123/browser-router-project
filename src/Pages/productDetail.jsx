@@ -83,6 +83,7 @@ const ProductDetail = () => {
 
             <button
               className="bg-red-500 px-2 py-4  w-[80%]"
+              type="button"
               onClick={handleDelete}
             >
               Delete

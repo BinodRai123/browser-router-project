@@ -1,10 +1,16 @@
 import { nanoid } from "nanoid";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { context } from "../wrapper";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [formData, setFormData] = useContext(context);
+  const [files, setFiles] = useState({
+    message: "No Files currently selected for upload",
+    preview: null
+  });
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,13 +20,47 @@ const Form = () => {
 
   const handleFormData = (data) => {
     data.id = nanoid();
-    setFormData([...formData, data]);
-    reset();
+    setFormData([data, ...formData]);
+    navigate("/products");
+  };
+
+  const handleUploadImage = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      
+      setFiles({message: "", preview: URL.createObjectURL(file)});
+    } else setFiles({message: "❌ Please select a valid image file", preview: null});
   };
 
   return (
     <>
-      <form className="flex flex-col gap-8 mt-16 items-center" onSubmit={handleSubmit(handleFormData)}>
+      <form
+        className="flex flex-col gap-8 mt-16 items-center"
+        onSubmit={handleSubmit(handleFormData)}
+      >
+        <label
+          className="w-1/2 px-2 py-4 text-center text-xl bg-blue-500 hover:bg-blue-600 cursor-pointer"
+          htmlFor="image_uploads"
+        >
+          Choose images to upload (PNG, JPG)
+        </label>
+        <input
+          className="hidden"
+          id="image_uploads"
+          type="file"
+          accept="image/*"
+          onChange={handleUploadImage}
+        />
+
+       {/* { //Uploaded Images will show } */}
+        <div className=" w-1/2">
+          {files.preview ? (
+            <img src={files.preview} alt="photo" />
+          ) : (
+            <p className="border-white border-1 text-red-400 p-4">{files.message}</p>
+          )}
+        </div>
+
         <input
           {...register("product_name")}
           className="text-xl font-thin add-product-field"

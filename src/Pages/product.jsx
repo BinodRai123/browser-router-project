@@ -20,7 +20,7 @@ const Products = () => {
             desc={data.description}
             image={data.image}
           />
-        )) : "Nothing...."}
+        )) : <h1 className="text-red-500 text-4xl mt-6 uppercase">No Product Register.....!</h1> }
       </div>
     </>
   );
