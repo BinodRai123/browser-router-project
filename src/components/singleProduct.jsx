@@ -10,16 +10,16 @@ const Singleproduct = ({ id, title, rating, price, cateogry, desc, image }) => {
     <>
       <div
         onClick={moveProductDetailPage}
-        className="rounded shadow-xl/20 flex bg-gray-800 gap-10 hover:scale-[1.01] ease-in cursor-pointer"
+        className="rounded shadow-xl/20 flex flex-col md:flex-row bg-gray-800 gap-10 hover:scale-[1.01] ease-in cursor-pointer"
       >
-        <div className="image-container min-w-44">
+        <div className="md:w-1/2">
           <img
-            className="object-fit aspect-square p-5"
-            src={image}
+            className="object-center object-cover min-h-52 md:h-full md:w-auto p-4"
+            src={`${image?.preview}`}
             alt="bag-photo"
           />
         </div>
-        <div className="flex flex-col gap-3 product-details w-[55%] ml-auto p-10">
+        <div className="flex flex-col gap-3 p-5 md:p-10 md:w-1/2">
           <h1 className="text-3xl font-bold max-w-[30ch] border-b py-3">
             {title}
           </h1>

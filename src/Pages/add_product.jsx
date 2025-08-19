@@ -8,7 +8,7 @@ const Form = () => {
   const [formData, setFormData] = useContext(context);
   const [files, setFiles] = useState({
     message: "No Files currently selected for upload",
-    preview: null
+    preview: null,
   });
   const navigate = useNavigate();
   const {
@@ -20,6 +20,7 @@ const Form = () => {
 
   const handleFormData = (data) => {
     data.id = nanoid();
+    data.image = files;
     setFormData([data, ...formData]);
     navigate("/products");
   };
@@ -27,15 +28,18 @@ const Form = () => {
   const handleUploadImage = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith("image/")) {
-      
-      setFiles({message: "", preview: URL.createObjectURL(file)});
-    } else setFiles({message: "❌ Please select a valid image file", preview: null});
+      setFiles({ message: "", preview: URL.createObjectURL(file) });
+    } else
+      setFiles({
+        message: "❌ Please select a valid image file",
+        preview: null,
+      });
   };
 
   return (
     <>
       <form
-        className="flex flex-col gap-8 mt-16 items-center"
+        className="min-h-screen bg-inherit flex flex-col items-center gap-8 m py-10"
         onSubmit={handleSubmit(handleFormData)}
       >
         <label
@@ -45,6 +49,7 @@ const Form = () => {
           Choose images to upload (PNG, JPG)
         </label>
         <input
+          {...register("image")}
           className="hidden"
           id="image_uploads"
           type="file"
@@ -52,12 +57,14 @@ const Form = () => {
           onChange={handleUploadImage}
         />
 
-       {/* { //Uploaded Images will show } */}
+        {/* { //Uploaded Images will show } */}
         <div className=" w-1/2">
           {files.preview ? (
             <img src={files.preview} alt="photo" />
           ) : (
-            <p className="border-white border-1 text-red-400 p-4">{files.message}</p>
+            <p className="border-white border-1 text-red-400 p-4">
+              {files.message}
+            </p>
           )}
         </div>
 

@@ -4,6 +4,7 @@ import { context } from "../wrapper";
 
 const Products = () => {
   const [formData, setFormData] = useContext(context);
+  console.log(formData)
   console.log(formData.length)
 
   return (
